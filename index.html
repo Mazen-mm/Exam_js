@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Yummy</title>
+		<link rel="stylesheet" href="css/all.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+  <!-- loading-screen - start -->
+  <div class="loading-screen position-fixed top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-items-center" style="display: none;">
+    <i class="fa fa-spinner fa-spin fa-5x"></i>
+  </div>
+  <!-- loading-screen - end -->
+
+  <!-- sidebar - start -->
+  <div id="sidebar" class="sidebar position-fixed z-3 vh-100 bg-black">
+    <div class="d-flex row justify-content-between">
+      <div class="links w-75 d-flex row align-content-between">
+        <div class="overflow-hidden">
+          <ul class="mt-4 text-white position-absolute">
+            <li class="mt-3" onclick="searchIn()" id="search">Search</li>
+            <li class="mt-3" onclick="categ()" id="category">Categories</li>
+            <li class="mt-3" id="area">Area</li>
+            <li class="mt-3" id="ingredients">Ingredients</li>
+            <li class="mt-3" onclick="contactUs()" id="contact">Contact Us</li>
+          </ul>
+        </div>
+        <div class="text-white text-start w-75 ms-2 position-absolute bottom-0 overflow-auto">
+          <div class="mx-auto ">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+            <p>Copyright Â© 2019 All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+      <div class="py-4 bg-white w-25 vh-100 d-flex flex-wrap gx-2 row align-content-between">
+        <div class="m-auto w-100"><img src="images/logo-yummy.png" class="w-100" /></div>
+        <div class="text-center">
+            <button id="setting" class="border-0 bg-transparent"><i class="fa-solid fa-bars fa-2xl"></i>
+            </button>
+        </div>
+        <div class="text-center">
+            <i class="fa-solid fa-globe"></i><br/>
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar - end -->
+
+
+  <!-- all-main - start -->
+  <div class="container meals" id="searchContainer">
+    <div class="row py-5 g-4 " id="rowData">
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52977')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Corba</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52772')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Sushi</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53060')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Burek</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53069')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/4pqimk1683207418.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Bistek</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53026')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/n3xxd91598732796.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Tamiya</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52978')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Kumpir</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52948')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/1525876468.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Wontons</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52844')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/wtsvxx1511296896.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Lasagne</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52971')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/1bsv1q1560459826.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Kafteji</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53013')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Big Mac</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52804')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Poutine</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53027')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Koshari</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52785')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Dal fry</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52929')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/txsupu1511815755.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Timbits</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52854')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Pancakes</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52769')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/sxysrt1468240488.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Kapsalon</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52802')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/ysxwuq1487323065.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Fish pie</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52906')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/wssvvs1511785879.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Flamiche</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53028')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/kcv6hj1598733479.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Shawarma</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52887')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/utxqpt1511639216.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Kedgeree</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52980')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/hyarod1565090529.jpg" alt="" srcset="">
+            <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+              <h3>Stamppot</h3>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('53006')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/ctg8jd1585563097.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Moussaka</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52963')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/g373701551450225.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Shakshuka</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52931')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Sugar Pie</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div onclick="getMealDetails('52811')" class="meal position-relative overflow-hidden rounded-2 cursor-pointer">
+          <img class="w-100" src="https://www.themealdb.com/images/media/meals/xrrwpx1487347049.jpg" alt="" srcset="">
+          <div class="meal-layer position-absolute d-flex align-items-center text-black p-2">
+            <h3>Ribollita</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="details">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="" alt="" class="img-details">
+        <h1 class="title"></h1>
+      </div>
+      <div class="col-md-8">
+        <h1>Instructions</h1>
+        <p class="ins-info"></p>
+        <h3>Area : <span class="fw-bolder area"></span></h3>
+        <h3>Category : <span class="fw-bolder category"></span></h3>
+        <h3>Recipes : <span class="fw-bolder recipes"></span></h3>
+        <ul class="list-unstyled d-flex g-3 flex-wrap">
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+          <li class="alert alert-info m-2 p-1"></li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  <!-- all-main - end -->
+
+
+
+  <!-- search - start -->
+  <div class="search w-75" id="searchContainer">
+    <div class="row py-4 ">
+      <div class="search-in col-md-6 ">
+        <input onkeyup="searchByName(this.value)" class="form-control bg-transparent text-white" type="text" placeholder="Search By Name">
+      </div>
+      <div class="search-in col-md-6">
+        <input onkeyup="searchByFLetter(this.value)" maxlength="1" class="form-control bg-transparent text-white" type="text" placeholder="Search By First Letter">
+      </div>
+    </div>
+  </div>
+  <!-- search - end -->
+
+
+  <div class="categorees" id="Category">
+    <div class="row py-5 m-5" id="rowCategory">
+      <div class="categ ">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- contact us - start -->
+  <div class="contact-us m-5 justify-content-center align-items-center">
+    <div class="container w-75 text-center">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <input id="nameInput" onkeyup="inputsValidation()" type="text" class="form-control" placeholder="Enter Your Name">
+                <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Special characters and numbers not allowed
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="emailInput" onkeyup="inputsValidation()" type="email" class="form-control " placeholder="Enter Your Email">
+                <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Email not valid *exemple@yyy.zzz
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="phoneInput" onkeyup="inputsValidation()" type="text" class="form-control " placeholder="Enter Your Phone">
+                <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid Phone Number
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="ageInput" onkeyup="inputsValidation()" type="number" class="form-control " placeholder="Enter Your Age">
+                <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid age
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="passwordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Enter Your Password">
+                <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid password *Minimum eight characters, at least one letter and one number:*
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="repasswordInput" onkeyup="inputsValidation()" type="password" class="form-control " placeholder="Repassword">
+                <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid repassword 
+                </div>
+            </div>
+        </div>
+        <button id="submitBtn" disabled="" class="btn btn-outline-danger px-2 mt-3">Submit</button>
+    </div>
+  </div>
+  <!-- contact us - end -->
+
+
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
